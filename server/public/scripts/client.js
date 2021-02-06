@@ -26,4 +26,22 @@ function retrieveMaths(event) {
       resetValue: $('#clearBtn').val(),
     },
   ];
+  console.log('Array info', retrieveInfoArray);
+
+  // POST quote data to server
+  $.ajax({
+    url: '/calculator',
+    method: 'POST',
+    // this becomes .req.body - data:
+    data: {
+      items_to_equate: retrieveInfoArray,
+    },
+  })
+    .then(function () {
+      console.log('Huzzah!');
+      // not sure what to do with this yet just have it ...
+    })
+    .catch(function (error) {
+      console.log('Wah Wah', error);
+    });
 }

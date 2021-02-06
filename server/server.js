@@ -17,7 +17,9 @@ app.get('/calculator', function (req, res) {
 });
 
 app.post('/calculator', function (req, res) {
-  //
+  let results = req.body.items_to_equate;
+  console.log('here are my results', results);
+  console.log('req.body', req.body);
 });
 
 app.listen(PORT, function () {

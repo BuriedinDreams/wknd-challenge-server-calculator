@@ -6,10 +6,8 @@
 
 - [] Client Side
 
-  - - []
+  - -[] have information from .val in an array and sent via ajax to server side.
 
 - [] Server Side
 
   - - []
-
-- []
