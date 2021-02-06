@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./stylesheet/styles.css" />
     <script src="./vendors/jQuery-min.js"></script>
+    <!-- <script src="./modules/calculator.js"></script> -->
     <script src="./scripts/client.js"></script>
 
     <title>Server-Calculator</title>
@@ -12,7 +13,7 @@
   <body>
     <h1>Server Side Calculator</h1>
 
-    <span id="innerFace">
+    <form id="innerFace">
       <input type="number" placeholder="Enter number here" id="numOne" />
 
       <input type="button" value="+" id="addInput" />
@@ -28,7 +29,7 @@
       <input type="submit" value="=" id="equals" />
 
       <input type="reset" value="Clear" id="clearBtn" />
-    </span>
+    </form>
 
     <h3>Results for equation</h3>
     <div id="equationResults">

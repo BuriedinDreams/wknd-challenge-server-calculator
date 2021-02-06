@@ -8,10 +8,11 @@ function onReady() {
   $(document).on('click', '#innerFace', retrieveMaths);
 }
 
-function retrieveMaths() {
+function retrieveMaths(event) {
+  event.preventDefault();
   console.log('inside the retrieveMaths func');
 
-  const retrieveInfo = [
+  const retrieveInfoArray = [
     // This is going to capture the values of these inputs
     // I will then be able to send the info to server side.
     {

@@ -12,11 +12,11 @@ app.use(express.urlencoded({ extended: true }));
 // Serve up static files (HTML, CSS, Client JS etc.)
 app.use(express.static('server/public'));
 
-app.get('/', function (req, res) {
-  res.send('<h3> Testing </h3>');
+app.get('/calculator', function (req, res) {
+  res.send('');
 });
 
-app.post('/', function (req, res) {
+app.post('/calculator', function (req, res) {
   //
 });
 
