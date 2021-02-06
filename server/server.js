@@ -14,6 +14,10 @@ app.get('/', function (req, res) {
   res.send('<h3> Testing </h3>');
 });
 
+app.post('/', function (req, res) {
+  //
+});
+
 app.listen(PORT, function () {
   console.log('Server is running on port', PORT);
 });

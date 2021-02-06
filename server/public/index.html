@@ -11,5 +11,37 @@
   </head>
   <body>
     <h1>Server Side Calculator</h1>
+
+    <span id="innerFace">
+      <input type="number" placeholder="Enter number here" id="numOne" />
+
+      <input type="button" value="+" id="addInput" />
+
+      <input type="button" value="-" id="minusInput" />
+
+      <input type="button" value="*" id="multiInput" />
+
+      <input type="button" value="/" id="divideInput" />
+
+      <input type="number" placeholder="Enter number here" id="numTwo" />
+
+      <input type="submit" value="=" id="equals" />
+
+      <input type="reset" value="C" id="clearBtn" />
+    </span>
+
+    <h3>Results for equation</h3>
+    <div id="equationResults">
+      <ul>
+        42
+      </ul>
+    </div>
+
+    <h3>Previous Equation Results</h3>
+    <div id="prevEquResults">
+      <li>15 - 9 = 6</li>
+      <li>8 * 5 = 40</li>
+      <li>56 / 8 = 7</li>
+    </div>
   </body>
 </html>
