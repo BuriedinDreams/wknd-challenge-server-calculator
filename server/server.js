@@ -2,6 +2,8 @@ const express = require('express');
 const app = express();
 const PORT = 5000;
 
+const calculatorInfo = require('./modules/calculator.js');
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
