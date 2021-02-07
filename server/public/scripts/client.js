@@ -55,7 +55,32 @@ function retrieveMaths(event) {
     });
 }
 //
+function fetchSolvedMaths() {
+  let ajaxOptions = {
+    url: '/calculator',
+    method: 'GET',
+  };
 
+  $.ajax(ajaxOptions)
+    //Promise
+    .then(function (mathResults) {
+      // this is original name response,
+      console.log('got a response', mathResults);
+
+      $('#prevEquResults').empty();
+      for (let nums of mathResults) {
+        console.log('nums', nums);
+        //   $('#prevEquResults').append(`
+        // <li>${nums}</li>
+        // `);
+      }
+    })
+
+    //
+    .catch(function () {
+      $('#messages').text('Oh no, something broke, contact IT');
+    });
+}
 //
 function clearForm(event) {
   event.preventDefault();
