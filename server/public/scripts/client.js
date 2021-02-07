@@ -25,22 +25,37 @@ function retrieveMaths(event) {
   event.preventDefault();
   console.log('inside the retrieveMaths func');
 
-  const retrieveInfoArray = [
+  const retrieveInfoArray =
     // This is going to capture the values of these inputs
     // I will then be able to send the info to server side.
     {
       enterNum1: Number($('#numOne').val()),
       enterNum2: Number($('#numTwo').val()),
       theOperator: mathOperator, // this is coming from the top of the file.
-    },
-  ];
-
-  // submitValue: $('#equals').val(),
-  // resetValue: $('#clearBtn').val(),
+    };
 
   console.log('Array info', retrieveInfoArray);
+
+  // POST quote data to server
+  $.ajax({
+    url: '/calculator',
+    method: 'POST',
+    // this becomes .req.body - data:
+    data: {
+      items_to_equate: retrieveInfoArray,
+    },
+  })
+    .then(function () {
+      console.log('Huzzah!');
+      // not sure what to do with this yet just have it ...
+      fetchSolvedMaths();
+    })
+    .catch(function (error) {
+      console.log('Wah Wah', error);
+    });
 }
 //
+
 //
 function clearForm(event) {
   event.preventDefault();
@@ -53,19 +68,3 @@ function clearForm(event) {
 }
 //
 //
-// POST quote data to server
-// $.ajax({
-//   url: '/calculator',
-//   method: 'POST',
-//   // this becomes .req.body - data:
-//   data: {
-//     items_to_equate: retrieveInfoArray,
-//   },
-// })
-//   .then(function () {
-//     console.log('Huzzah!');
-//     // not sure what to do with this yet just have it ...
-//   })
-//   .catch(function (error) {
-//     console.log('Wah Wah', error);
-//   });

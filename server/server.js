@@ -3,6 +3,8 @@ const send = require('send');
 const app = express();
 const PORT = 5000;
 
+const calculation = require('./modules/calculator.js');
+
 // const calculatorInfo = require('./modules/calculator.js');
 
 app.use(express.json());
@@ -14,14 +16,17 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static('server/public'));
 
 app.get('/calculator', function (req, res) {
-  res.send('');
+  res.send(calculation.solveTheMaths());
 });
 
 app.post('/calculator', function (req, res) {
-  let results = req.body.items_to_equate;
-  console.log('here are my results', results);
+  let mathEquation = req.body.items_to_equate;
+  console.log('here are my results', mathEquation);
   console.log('req.body', req.body);
-  res.sendstatus(200);
+  //
+  calculation.solveTheMaths(mathEquation);
+  //
+  res.sendStatus(200);
 });
 
 app.listen(PORT, function () {
