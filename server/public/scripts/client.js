@@ -64,21 +64,31 @@ function fetchSolvedMaths() {
   $.ajax(ajaxOptions)
     //Promise
     .then(function (mathResults) {
-      // this is original name response,
+      // This parameter ^ is calculation.historyOfResults from 'GET'
+
       console.log('got a response', mathResults);
+      //
 
       $('#prevEquResults').empty();
       for (let nums of mathResults) {
-        console.log('nums', nums);
-        //   $('#prevEquResults').append(`
-        // <li>${nums}</li>
-        // `);
+        console.log('nums', nums.enterNum1);
+        console.log('nums', nums.theOperator);
+        console.log('nums', nums.enterNum2);
+        console.log('nums', nums.currentResults); // this is being grabbed from calc.js
+        $('#equationResults').empty();
+        //
+        $('#equationResults').append(`
+        <li> ${Number(nums.currentResults)} </li>
+        `);
+
+        $('#prevEquResults').append(`
+        <li>${nums.enterNum1} ${nums.theOperator} ${nums.enterNum2} = ${nums.currentResults}</li>
+        `);
       }
     })
 
-    //
-    .catch(function () {
-      $('#messages').text('Oh no, something broke, contact IT');
+    .catch(function (error) {
+      console.log('Oh no something broke!', error);
     });
 }
 //

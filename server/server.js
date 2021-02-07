@@ -16,7 +16,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static('server/public'));
 
 app.get('/calculator', function (req, res) {
-  res.send(calculation.solveTheMaths());
+  res.send(calculation.historyOfResults); // this needs to sent over to .then 'GET ajax.
 });
 
 app.post('/calculator', function (req, res) {
