@@ -1,8 +1,9 @@
 const express = require('express');
+const send = require('send');
 const app = express();
 const PORT = 5000;
 
-const calculatorInfo = require('./modules/calculator.js');
+// const calculatorInfo = require('./modules/calculator.js');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -20,6 +21,7 @@ app.post('/calculator', function (req, res) {
   let results = req.body.items_to_equate;
   console.log('here are my results', results);
   console.log('req.body', req.body);
+  res.sendstatus(200);
 });
 
 app.listen(PORT, function () {
