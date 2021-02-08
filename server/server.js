@@ -10,13 +10,13 @@ const calculation = require('./modules/calculator.js');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// These items are required inorder for the server to run.
+// These items are required in order for the server to run.
 
 // Serve up static files (HTML, CSS, Client JS etc.)
 app.use(express.static('server/public'));
 
 app.get('/calculator', function (req, res) {
-  res.send(calculation.historyOfResults); // this needs to sent over to .then 'GET ajax.
+  res.send(calculation.historyOfResults); // this needs to sent over to .then 'GET' ajax. | historyOfResults is coming from calc.js file; it's the array at the top.
 });
 
 app.post('/calculator', function (req, res) {

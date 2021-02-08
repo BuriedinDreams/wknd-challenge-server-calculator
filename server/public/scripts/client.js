@@ -31,7 +31,7 @@ function retrieveMaths(event) {
     {
       enterNum1: Number($('#numOne').val()),
       enterNum2: Number($('#numTwo').val()),
-      theOperator: mathOperator, // this is coming from the top of the file.
+      theOperator: mathOperator, // this is coming from the retrieveOperator func.
     };
 
   console.log('Array info', retrieveInfoArray);
@@ -47,8 +47,8 @@ function retrieveMaths(event) {
   })
     .then(function () {
       console.log('Huzzah!');
-      // not sure what to do with this yet just have it ...
-      fetchSolvedMaths();
+      //
+      fetchSolvedMaths(); // this is calling the function so it will run here.
     })
     .catch(function (error) {
       console.log('Wah Wah', error);
@@ -62,7 +62,7 @@ function fetchSolvedMaths() {
   };
 
   $.ajax(ajaxOptions)
-    //Promise
+    //
     .then(function (mathResults) {
       // This parameter ^ is calculation.historyOfResults from 'GET'
 
@@ -71,6 +71,8 @@ function fetchSolvedMaths() {
 
       $('#prevEquResults').empty();
       for (let nums of mathResults) {
+        //  mathResults is the array in calc.js file.
+        // this is looping through the
         console.log('nums', nums.enterNum1);
         console.log('nums', nums.theOperator);
         console.log('nums', nums.enterNum2);
