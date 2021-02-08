@@ -24,7 +24,7 @@ app.post('/calculator', function (req, res) {
   console.log('here are my results', mathEquation);
   console.log('req.body', req.body);
   //
-  calculation.solveTheMaths(mathEquation);
+  calculation.solveTheMaths(mathEquation); // this is sending the mathEquation to the solveTheMath func in calculator.js file.
   //
   res.sendStatus(200);
 });
