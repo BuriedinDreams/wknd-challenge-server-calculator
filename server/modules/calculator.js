@@ -17,7 +17,7 @@ function solveTheMaths(param) {
   } else {
     result = param.enterNum1 / param.enterNum2;
   }
-  param.currentResults = result;
+  param.currentResults = result; // this is the only spot this is place, be careful of this.
   console.log('this is param.currentResults key in it', param);
   historyOfResults.push(param);
 
